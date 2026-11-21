@@ -1,16 +1,8 @@
 # Arbeitsprogramm
 
-Web-Anwendung mit Dashboard, Seitenleiste und verschachtelten Menüs.
-Läuft ohne Installation: einfach `index.html` im Browser öffnen.
+Streamlit-App mit Dashboard, Seitenleiste und verschachtelten Menüs.
 
-## Struktur
-
-| Datei | Zweck |
-|---|---|
-| `js/menu.js` | **Menüs & Untermenüs** – hier werden neue Menüpunkte eingetragen |
-| `js/pages.js` | Inhalte der einzelnen Seiten (Dashboard, Einstellungen, …) |
-| `js/app.js` | Navigation, Routing, Dark Mode |
-| `css/style.css` | Aussehen |
-
-Daten (Aufgaben, Notizen) werden lokal im Browser gespeichert und können
-unter *Einstellungen* exportiert/importiert werden.
+- **Hauptdatei:** `Amin213.py`
+- **Menüs & Untermenüs:** ganz oben in `Amin213.py` in der Liste `MENU`
+- **Lokal starten:** `pip install -r requirements.txt` und dann `streamlit run Amin213.py`
+- **Online:** Streamlit Community Cloud (share.streamlit.io)
