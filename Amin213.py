@@ -151,6 +151,19 @@ def page_placeholder(item, path):
 
 PAGES = {"dashboard": page_dashboard, "settings": page_settings}
 
+# Algerische Flagge (wird oben in der Mitte jeder Seite angezeigt)
+FLAG_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect width="900" height="600" fill="#fff"/><rect width="450" height="600" fill="#006233"/><path fill="#d21034" d="M579.9 225A150 150 0 1 0 579.9 375A120 120 0 1 1 579.9 225Z"/><polygon fill="#d21034" points="585.0,300.0 543.5,286.5 543.5,242.9 517.9,278.2 476.5,264.7 502.1,300.0 476.5,335.3 517.9,321.8 543.5,357.1 543.5,313.5"/></svg>'
+
+
+def show_flag():
+    st.markdown(
+        '<div style="display:flex;justify-content:center;margin:0 0 1rem">'
+        '<div style="width:180px;box-shadow:0 2px 8px rgba(0,0,0,.25);line-height:0">'
+        + FLAG_SVG + "</div></div>",
+        unsafe_allow_html=True,
+    )
+
+
 # =====================================================================
 # APP-KERN: Navigation (normalerweise nicht anfassen)
 # =====================================================================
@@ -205,6 +218,8 @@ item, trail = find(st.session_state.path)
 if item is None:
     st.session_state.path = [MENU[0]["title"]]
     item, trail = find(st.session_state.path)
+
+show_flag()
 
 if len(trail) > 1:
     st.caption(" / ".join(t["title"] for t in trail))
